@@ -1,0 +1,31 @@
+adding templates
+
+	'DIRS': [os.path.join(BASE_DIR,'templates')],
+
+
+DataBase_postgresql
+
+	DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'p7app_db',
+        'USER': 'postgres',
+        'PASSWORD': 'po32',
+        'HOST' : 'localhost',
+    }
+}
+
+
+Static
+
+	STATIC_URL = '/static/'
+	STATICFILES_DIRS = [
+	    os.path.join(BASE_DIR,'static')
+	]
+	STATIC_ROOT = os.path.join(BASE_DIR,'assets')
+
+Media
+
+
+	MEDIA_URL = '/media/'
+	MEDIA_ROOT = os.path.join(BASE_DIR,'media')
