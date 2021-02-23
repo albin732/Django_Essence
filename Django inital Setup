@@ -1,0 +1,33 @@
+		INITIAL SET UP
+    
+	    first install python3 globally
+		
+	setup virtual enviornment
+		pip3 install virtualenv
+		or sudo apt install python3-virtualenv
+		
+		virtualenv venv
+		source venv/bin/activate
+
+	Installing Django
+		pip3 install Django
+
+	Installed dependencies
+		pip3 freeze
+		pip3 freeze>requirements.txt
+		pip3 install -r requirements.txt
+
+	Starting Projects
+		django-admin startproject mysite
+		cd mysite
+		python3 manage.py startapp myapp
+
+	migrations
+		python3 manage.py makemigrations
+		python3 manage.py migrate
+		python3 manage.py runserver   (runserver 8080)
+		(port taken - sudo fuser -k 8000/tcp)
+
+	superuser
+		python3 manage.py createsuperuser
+
