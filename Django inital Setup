@@ -1,33 +1,57 @@
-		INITIAL SET UP
-    
-	    first install python3 globally
+			INITIAL SET UP
+			
+	first install python3 globally
+    	
+    	create repo
+    		mkdir rp-name
+    		cd rp-name
 		
 	setup virtual enviornment
-		pip3 install virtualenv
-		or sudo apt install python3-virtualenv
-		
-		virtualenv venv
+		python3 -m venv venv
 		source venv/bin/activate
 
 	Installing Django
-		pip3 install Django
+		pip install Django
 
+	Create a Django Project
+		django-admin startproject project_name
+		
+	Rearranging repository
+		mv project_name/manage.py ./
+		mv project_name/project_name/* project_name
+		rm -r project_name/project_name/
+		
+	Create app
+		python manage.py startapp app_name
+
+	start the server
+		python manage.py runserver  (runserver 8080)
+		(port taken - sudo fuser -k 8000/tcp)
+		
+	Create a Django Application
+		python manage.py startapp hello_world
+
+
+	--------------------------------------------------------------------------------------
+	
 	Installed dependencies
-		pip3 freeze
-		pip3 freeze>requirements.txt
-		pip3 install -r requirements.txt
-
-	Starting Projects
-		django-admin startproject mysite
-		cd mysite
-		python3 manage.py startapp myapp
+		pip freeze
+		pip freeze > requirements.txt
+		pip install -r requirements.txt
 
 	migrations
-		python3 manage.py makemigrations
-		python3 manage.py migrate
-		python3 manage.py runserver   (runserver 8080)
-		(port taken - sudo fuser -k 8000/tcp)
+		python manage.py makemigrations
+		python manage.py migrate
 
 	superuser
-		python3 manage.py createsuperuser
+		python manage.py createsuperuser
+		
+	--------------------------------------------------------------------------------------
+	test using coverage
+		pip install coverage
+		coverage run --omit='*/venv/*' manage.py test
+		coverage html
+
+https://realpython.com/get-started-with-django-1/
+https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
 
